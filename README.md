@@ -1,4 +1,4 @@
-# Writing RSQKit Task Pages with Claude Skills
+# Writing RSQKit Task Pages with Skills
 
 This guide explains how to use the RSQKit task page Claude skills to draft, refine, and prepare new task pages for submission to the [RSQKit repository](https://github.com/EVERSE-ResearchSoftware/RSQKit).
 
