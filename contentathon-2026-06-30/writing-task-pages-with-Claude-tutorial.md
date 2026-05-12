@@ -3,10 +3,11 @@
 **Tutorial · approximately 1 hour · works in Claude.ai desktop**
 
 ---
-
+> [!NOTE]  
 > **Free plan users:** the free Claude plan typically allows around 5–7 messages per session before hitting the usage limit. 
 > To get through all four skills you may have to spread the work across multiple short sessions or ask a colleague to continue with queries on their machine.
 
+> [!IMPORTANT]  
 > **Prefer not to use AI tools?** No problem — you can draft your task page manually. 
 > Start by writing in a collaborative document such as [Google Docs](https://docs.google.com), following the [RSQKit page structure]() - see the [template](https://github.com/EVERSE-ResearchSoftware/RSQKit/blob/main/pages/tasks/TEMPLATE_task.md) and [example task pages](https://everse.software/RSQKit/tasks). 
 > When your draft is ready for review, fork the [RSQKit repository](https://github.com/EVERSE-ResearchSoftware/RSQKit), add your page file to `pages/tasks/`, and open a pull request against the `main` branch. The editorial board will review it from there.
@@ -128,6 +129,7 @@ Example prompts:
 - **Check the Further Reading links.** The skills suggest well-regarded resources, but verify that links are still live and references to sections are accurate before submitting.
 - **Review quality indicators carefully.** The metadata skill suggests indicators conservatively, but confirm each one is genuinely satisfied by a reader following the page's guidance.
 
+> [!NOTE]  
 > **Note:** after running steps 3 and 4, Claude may suggest new tool registry entries or flag contributor details to fill in manually. Always review `related_pages` and `quality_indicators` in the generated metadata before submitting.
 
 ---
@@ -137,3 +139,4 @@ Example prompts:
 - Skills and full workflow documentation: [github.com/shoaibsufi/rsqkit-task-page-skills](https://github.com/shoaibsufi/rsqkit-task-page-skills)
 - RSQKit repository: [github.com/EVERSE-ResearchSoftware/RSQKit](https://github.com/EVERSE-ResearchSoftware/RSQKit)
 - RSQKit contribution guidelines: [EVERSE-ResearchSoftware/RSQKit — contribution guidelines](https://github.com/EVERSE-ResearchSoftware/RSQKit/blob/main/pages/contributing/contribution_guidelines.md)
+- RSQKit task page template: [EVERSE-ResearchSoftware/RSQKit — task pages guidelines](https://github.com/EVERSE-ResearchSoftware/RSQKit/blob/main/pages/tasks/TEMPLATE_task.md)
