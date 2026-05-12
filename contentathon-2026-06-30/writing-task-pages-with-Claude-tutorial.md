@@ -2,7 +2,6 @@
 
 **Tutorial · approximately 1 hour · works in Claude.ai desktop**
 
----
 > [!NOTE]  
 > **Free plan users:** the free Claude plan typically allows around 5–7 messages per session before hitting the usage limit. 
 > To get through all four skills you may have to spread the work across multiple short sessions or ask a colleague to continue with queries on their machine.
@@ -12,7 +11,15 @@
 > Start by writing in a collaborative document such as [Google Docs](https://docs.google.com), following the [RSQKit page structure]() - see the [template](https://github.com/EVERSE-ResearchSoftware/RSQKit/blob/main/pages/tasks/TEMPLATE_task.md) and [example task pages](https://everse.software/RSQKit/tasks). 
 > When your draft is ready for review, fork the [RSQKit repository](https://github.com/EVERSE-ResearchSoftware/RSQKit), add your page file to `pages/tasks/`, and open a pull request against the `main` branch. The editorial board will review it from there.
 
----
+
+
+## Aims and objectives
+
+Overall aim of the contentathon is to create drafts of task pages for inclusion into RSQKit.
+Drafts can either be created manually from scratch or with the help of an AI which will then need to be reviewed manually by the authors (in the first instance) and then the RSQKit Editorial Board.
+
+Objectives of this tutorial are learn how to use pre-prepared prompts (in the form of Claude AI `skills`) and Claude AI desktop app to help with draft generation following a pre-defined set of rules and structure for task pages. 
+
 
 ## What are RSQKit task pages?
 
@@ -22,13 +29,10 @@ It typically does not offer an in depth instructions on how to perform the task 
 
 See existing pages at: https://everse.software/RSQKit/tasks.
 
---- 
 
 ## What are Claude skills?
 
 Skills are instruction files that tell Claude how to do a specific task — consistently, every time. You install them once into the Claude desktop app (under Custimise → Skills), and Claude automatically uses the right one when you describe what you want. The four skills in this tutorial work as a sequence: you write a draft, optionally enrich it with sources, tidy up tool links, then generate metadata.
-
----
 
 ## Before you start — what to install
 
@@ -40,8 +44,6 @@ Download the skill files from [github.com/shoaibsufi/rsqkit-task-page-skills](ht
 
 **A fork of the RSQKit repository**
 You'll submit your finished page via a pull request. Fork [EVERSE-ResearchSoftware/RSQKit](https://github.com/EVERSE-ResearchSoftware/RSQKit) now so it's ready when you need it.
-
----
 
 ## The four RSQKit skills
 
@@ -65,7 +67,6 @@ There are four skills in the RSQKit task page family, designed to be used in seq
 
 Steps 2 and 3 can be swapped. Step 4 can run any time after step 1. Always start a fresh Claude conversation for each new page — it keeps context small and output consistent.
 
----
 
 ## What each skill does
 
@@ -79,8 +80,6 @@ Example prompts:
 - *"Write an RSQKit task page on how to use software containers for reproducible research."*
 - *"Write an RSQKit task page on choosing a software licence for research software."*
 
----
-
 ### Step 2 — `rsqkit-task-page-enrich`: enrich with sources (optional)
 
 If you have useful source material — a URL, an attached document, a paper, or pasted text — this skill weaves it into the existing draft without changing its structure. Claude fetches the URL, reads the content, follows relevant links one level deep, and summarises what changed and why.
@@ -90,8 +89,6 @@ This is particularly useful when a topic has authoritative community guidance yo
 Example prompts:
 - *"Enrich this draft using the content at https://example.org/guide."*
 - *"Enrich this page with references to relevant lessons in the Carpentries Incubator (https://github.com/carpentries-incubator)."*
-
----
 
 ### Step 3 — `rsqkit-task-page-update-tools`: replace tool links
 
@@ -103,8 +100,6 @@ Example prompts:
 - *"Update the tool links in this page."*
 - *"Replace tool links with tool tags."*
 
----
-
 ### Step 4 — `rsqkit-task-page-metadata`: generate front matter
 
 This skill produces the YAML block that goes at the top of your page file: `title`, `description`, `page_id`, `related_pages`, `quality_indicators`, `keywords`, and the EVERSE TeSS training entry. The `contributors` field is left empty for you to fill in manually.
@@ -114,8 +109,6 @@ Review the suggestions carefully — especially `related_pages` (check those IDs
 Example prompts:
 - *"Can you suggest page metadata for this task page?"*
 - *"Generate the YAML front matter for this page."*
-
----
 
 ## Step-by-step install guide
 
@@ -129,8 +122,6 @@ Example prompts:
 
 5. **Write your first page.** Start a new conversation. Give Claude a specific topic, then work through the four skills in order. When done, assemble the YAML front matter and page content into a single `.md` file and submit it as a pull request to the RSQKit repository.
 
----
-
 ## Tips for getting the best results
 
 - **Use a fresh conversation for each page.** The skills work best with a clean context. Long conversations with many files and prior exchanges can produce less consistent output.
@@ -141,8 +132,6 @@ Example prompts:
 
 > [!NOTE]  
 > **Note:** after running steps 3 and 4, Claude may suggest new tool registry entries or flag contributor details to fill in manually. Always review `related_pages` and `quality_indicators` in the generated metadata before submitting.
-
----
 
 ## Resources
 
