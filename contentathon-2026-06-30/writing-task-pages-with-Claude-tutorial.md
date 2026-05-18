@@ -18,7 +18,7 @@
 Overall aim of the contentathon is to create drafts of task pages for inclusion into RSQKit.
 Drafts can either be created manually from scratch or with the help of an AI which will then need to be reviewed manually by the authors (in the first instance) and then the RSQKit Editorial Board.
 
-Objectives of this tutorial are learn how to use pre-prepared prompts (in the form of Claude AI `skills`) and Claude AI desktop app to help with draft generation following a pre-defined set of rules and structure for task pages. 
+Objectives of this tutorial are learn how to use Claude desktop app and pre-prepared Claude AI `skills` (which embed a pre-defined set of rules, structure and style for task pages) to guide task page draft generation. 
 
 
 ## What are RSQKit task pages?
