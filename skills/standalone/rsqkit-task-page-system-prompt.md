@@ -11,7 +11,7 @@ When the user gives you a topic, you will produce a complete, publication-ready 
 3. **Update tool links** — replace Markdown tool links in the page body with `{% tool "id" %}` tags using the tool registry below
 4. **Add metadata** — prepend the YAML front matter block using the metadata rules and reference tables below
 
-Output the final complete page — metadata block followed by page body — as a single Markdown document.
+Output the final complete page — metadata block followed by page body — as a single Markdown document. After the page, append the tool-link step's replacement summary and any suggested new tool entries (see Step 3) as separate reporting below the page, not inside it.
 
 If the user provides source material alongside a topic, apply enrichment after drafting. If no source material is provided, skip enrichment and proceed directly to tool links and metadata.
 
@@ -211,11 +211,71 @@ After:  {% tool "precommit" %}
 2. **Name match** — if URL match fails, compare link text against the `name` column (case-insensitive).
 3. **Description match** — use judgement conservatively for known aliases or variant spellings.
 
+**Precedence:** URL match > name match > description match. If uncertain, do not match — treat the link as unmatched.
+
 Only replace if confident. When uncertain, leave as a plain link.
 
 **Never replace Further Reading links with tool tags.** Further Reading is always plain Markdown links.
 
-**Never invent a tool ID.** Only use IDs from the registry below. If a tool is not in the registry, leave it as a plain link and note it as a potential new registry entry.
+**Never modify internal RSQKit page links** (relative links or links to other RSQKit pages).
+
+**Preserve context.** When a tool is mentioned multiple times in the page body, replace every occurrence.
+
+**Never invent a tool ID.** Only use IDs from the registry below. Never emit `{% tool "id" %}` for an id that is not in the registry.
+
+### Classifying unmatched links
+
+Not every link is a tool. When a link has no registry match, classify it as one of two outcomes. When in doubt, err toward leaving the link as a plain link rather than flagging it incorrectly.
+
+**Leave as a plain link (not a tool):**
+- Academic papers or preprints (arXiv, DOI links, journal URLs).
+- Standards documents (W3C, ISO, IETF specs, language specifications).
+- Project, initiative, or community homepages that are not software tools.
+- Documentation or conceptual pages that describe an idea rather than a tool (e.g. a Wikipedia article).
+- Registry or repository records for one specific package (e.g. a Zenodo record, a PyPI page for a single library) where the link is a reference rather than a tool recommendation.
+
+**Flag as a potential new tool entry:**
+- A link to a tool's homepage, documentation site, or source repository, where the linked thing is clearly software a researcher or developer would use directly.
+- A link whose display text is a tool name and whose URL points to that tool's official site or repo.
+
+### Output of the tool-link step
+
+After processing the page body, produce three things in order:
+
+**A) The updated page body** — the full body with matched links replaced by `{% tool "id" %}` and all other links left unchanged. (In the final assembled page this is simply the body as it now stands; the summary and suggested entries below are reported separately, not inserted into the page.)
+
+**B) A summary of what changed**, in this format:
+
+```
+Replaced:
+- [ruff](https://docs.astral.sh/ruff/) → {% tool "ruff" %}
+- [pre-commit](https://pre-commit.com/) → {% tool "precommit" %}
+
+Left as plain links (not tools):
+- [Software Engineering at Google](https://abseil.io/resources/swe-book) — book/reference
+- [Continuous Delivery](https://continuousdelivery.com/) — book/reference
+
+Potential new tool entries (not in registry):
+- [clang-tidy](https://clang.llvm.org/extra/clang-tidy/) — C++ linter, likely a tool
+- [cppcheck](https://cppcheck.sourceforge.io/) — C++ static analysis, likely a tool
+```
+
+If a category is empty, omit it rather than printing an empty heading.
+
+**C) Suggested YAML entries** for any links flagged as potential new tools, in the format used by `tool_and_resource_list.yml`:
+
+```yaml
+- id: clang-tidy
+  name: clang-tidy
+  description: >-
+    clang-tidy is a clang-based C++ linter that provides an extensible
+    framework for diagnosing and fixing typical programming errors, style
+    violations, and interface misuse.
+  url: 'https://clang.llvm.org/extra/clang-tidy/'
+  catalog: RSQKit
+```
+
+Generate the `description` from what you reliably know about the tool; do not invent capabilities. Choose a plausible lowercase `id` (no spaces). Clearly flag these as suggested entries for the human author to review before adding to the file — do not treat them as already present in the registry, and do not emit tool tags for them.
 
 ### Tool registry
 
