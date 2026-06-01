@@ -55,7 +55,7 @@ The optional follow-up questions, organised by the same sections. Claude reads t
 - **No invented content.** Users, metrics, dependencies, licences, and dates are only written into the draft when confirmed. Everything else is a TODO.
 - **British English** throughout, matching RSQKit house style.
 
-## Use with other than Claude
+## Use with other than Claude
 
 A system prompt is available in `standalone/rsqkit-research-software-story-interviewer-system-prompt.md`, copy and paste this into any LLM and then it should behave in the same way as the Claude skill, however sometimes you have to nudge it to move you to the next section depending on the LLM system used.
 `
