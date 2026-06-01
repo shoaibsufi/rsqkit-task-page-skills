@@ -1,4 +1,4 @@
-**This is experimental *only* - the master version of Research Software Story interviwer is here - https://github.com/sparkslabs/EVERSE-Seminar-Nov2025-ResearchSoftwareStories/tree/main/GPT-PromptTools**
+**This is experimental *only* - the master version of Research Software Story interviewer is here - https://github.com/sparkslabs/EVERSE-Seminar-Nov2025-ResearchSoftwareStories/tree/main/GPT-PromptTools**
 
 # RSQKit Research Software Story Interviewer
 
