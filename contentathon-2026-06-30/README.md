@@ -1,7 +1,7 @@
 # RSQKit Contentathon 2026-06-30
 
 ## Team
-Shoaib Sufi, Laura Portell, Aleks Nenadic
+Shoaib Sufi, Laura Portell, Aleks Nenadic, Michael Sparks
 
 ## Aims
 
