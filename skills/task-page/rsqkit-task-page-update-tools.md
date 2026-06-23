@@ -141,6 +141,7 @@ Generate the description from what you know about the tool. Flag it clearly as a
 - **Do not modify internal RSQKit page links** (relative links or links to other RSQKit pages).
 - **Preserve link context.** When a tool is mentioned multiple times on the page, replace all occurrences.
 - **Do not add tool tags for tools not in the registry** — only suggest YAML entries; never emit `{% tool "id" %}` for an id that does not exist in the registry.
+- **Preserve the page's line structure.** Replace only the link tokens; do not reflow, rewrap, or merge prose. RSQKit body content is written one sentence per line — keep each sentence on its own line so the substitution produces a minimal, reviewable diff (ideally only the matched link changes). The suggested YAML entries in output C are front-matter-style and are exempt — they use block scalars (`>-`), not one sentence per line.
 ---
  
 ## Tools Registry
@@ -181,24 +182,24 @@ The following is the embedded tools registry extracted from `tool_and_resource_l
 | `pelican` | Pelican | https://getpelican.com/ |
 | `gitlab-pages` | GitLab Pages | https://docs.gitlab.com/ee/user/project/pages/ |
 | `github-pages` | GitHub Pages | https://pages.github.com/ |
-| `github-actions` | GitHub Actions | https://github.com/features/actions |
-| `gitlab-ci-cd` | GitLab CI/CD | https://docs.gitlab.com/ee/topics/build_your_application.html |
+| `github_actions` | GitHub Actions | https://github.com/features/actions |
+| `gitlab-cicd` | GitLab CI/CD | https://docs.gitlab.com/ee/topics/build_your_application.html |
 | `bandit` | Bandit | https://github.com/PyCQA/bandit |
 | `playwrite` | Playwrite | https://playwright.dev/docs/intro |
 | `scorep` | Score-P | https://gitlab.com/score-p/scorep |
 | `fuji` | F-UJI | https://github.com/softwaresaved/fuji/ |
 | `bearer` | Bearer | https://github.com/bearer/bearer |
-| `hermesworkflows` | Hermes Workflows | https://docs.software-metadata.pub/en/latest/ |
-| `cffinitgenerator` | CFFINIT Generator | https://citation-file-format.github.io/cff-initializer-javascript/#/ |
-| `codemetagenerator` | CodeMeta Generator | https://codemeta.github.io/codemeta-generator |
+| `hermes-workflow` | Hermes Workflows | https://docs.software-metadata.pub/en/latest/ |
+| `cffinit` | CFFINIT Generator | https://citation-file-format.github.io/cff-initializer-javascript/#/ |
+| `codemeta-generator` | CodeMeta Generator | https://codemeta.github.io/codemeta-generator |
 | `codemeta` | CodeMeta | https://codemeta.github.io/ |
 | `sqaaas` | SQAaas | https://sqaaas.eosc-synergy.eu/ |
 | `gitleaks` | gitleaks | https://github.com/gitleaks/gitleaks |
 | `black` | Black | https://github.com/psf/black |
-| `precommit` | precommit | https://pre-commit.com/ |
+| `pre-commit` | precommit | https://pre-commit.com/ |
 | `reuse` | REUSE | https://reuse.software/ |
-| `fairaware` | FAIR Aware | https://fairaware.dans.knaw.nl/ |
-| `creativecommons-licence-chooser` | Creative Commons License Chooser | https://chooser-beta.creativecommons.org/ |
+| `fair-aware` | FAIR Aware | https://fairaware.dans.knaw.nl/ |
+| `creative-commons-license-chooser` | Creative Commons License Chooser | https://chooser-beta.creativecommons.org/ |
 | `mkdocs` | MKDocs | https://www.mkdocs.org/ |
 | `pytest` | Pytest | https://docs.pytest.org/en/latest/ |
 | `testthat` | testthat | https://testthat.r-lib.org/ |
@@ -207,7 +208,7 @@ The following is the embedded tools registry extracted from `tool_and_resource_l
 | `junit` | JUnit | https://junit.org/junit5/ |
 | `cppunit` | CPPUnit | https://freedesktop.org/wiki/Software/cppunit/ |
 | `apptainer` | Apptainer | https://apptainer.org/ |
-| `singularity` | Singularity | https://sylabs.io/singularity/ |
+| `singularityce` | SingularityCE | https://sylabs.io/singularity/ |
 | `packer` | Packer | https://www.packer.io/ |
 | `ruff` | Ruff | https://docs.astral.sh/ruff/ |
 | `pylint` | Pylint | https://pylint.readthedocs.io/en/stable/ |
@@ -223,7 +224,7 @@ The following is the embedded tools registry extracted from `tool_and_resource_l
 | `jupyterbook` | Jupyter-Book | https://pypi.org/project/jupyter-book/ |
 | `git` | Git | https://git-scm.com/ |
 | `jenkins` | Jenkins | https://www.jenkins.io/ |
-| `travis` | Travis | https://www.travis-ci.com/ |
+| `travis-ci` | Travis CI | https://www.travis-ci.com/ |
 | `kubernetes` | Kubernetes | https://kubernetes.io/ |
 | `cmake` | CMake | https://cmake.org/ |
 | `nixos` | NixOS | https://nixos.org/ |
@@ -231,10 +232,10 @@ The following is the embedded tools registry extracted from `tool_and_resource_l
 | `rpm` | RPM | https://rpm.org/ |
 | `zammad` | Zammad | https://zammad.com/en |
 | `inveniordm` | InvenioRDM | https://inveniosoftware.org/products/rdm/ |
-| `softwareheritage` | Software Heritage | https://www.softwareheritage.org |
+| `software-heritage` | Software Heritage | https://www.softwareheritage.org |
 | `jasonldvalidator` | JSON-LD validator | https://json-ld.org/playground |
 | `somef` | SOMEF | https://github.com/KnowledgeCaptureAndDiscovery/somef |
-| `somefvider` | SOMEF Vider | https://somef.linkeddata.es/ |
+| `somef-vider` | SOMEF Vider | https://somef.linkeddata.es/ |
 | `readthedocs` | Read the Docs | https://about.readthedocs.com/ |
 | `sphinx` | Sphinx | https://www.sphinx-doc.org |
 | `gitlab` | GitLab | https://about.gitlab.com/ |
@@ -246,7 +247,7 @@ The following is the embedded tools registry extracted from `tool_and_resource_l
 | `pep8` | PEP8 | https://peps.python.org/pep-0008/ |
 | `r-language-style-guide` | R Style Guide | https://google.github.io/styleguide/Rguide.html |
 | `code-linters` | Code Linters | https://en.wikipedia.org/wiki/Lint_%28software%29 |
-| `google-programming-style-guide` | Google's programming style guide | https://google.github.io/styleguide/ |
+| `google-programming-style-guide` | Google’s programming style guide | https://google.github.io/styleguide/ |
 | `pycharm` | PyCharm | https://www.jetbrains.com/pycharm/ |
 | `eclipse` | Eclipse | https://eclipseide.org/ |
 | `jsdoc` | JSDoc | https://jsdoc.app/ |
@@ -270,7 +271,7 @@ The following is the embedded tools registry extracted from `tool_and_resource_l
 | `conan` | Conan | https://conan.io/ |
 | `maven` | Maven | https://maven.apache.org/ |
 | `bundler` | Bundler | https://bundler.io/ |
-| `fair-python-coockiecutter` | FAIR Python Coockiecutter | https://github.com/Materials-Data-Science-and-Informatics/fair-python-cookiecutter |
+| `fair-python-cookiecutter` | FAIR Python Cookiecutter | https://github.com/Materials-Data-Science-and-Informatics/fair-python-cookiecutter |
 | `documenter-jl` | Documenter.jl | https://documenter.juliadocs.org/stable/ |
 | `prettier-code-formatter` | Prettier | https://prettier.io/ |
 | `fortran` | Fortran | https://fortran-lang.org/ |
@@ -309,7 +310,7 @@ The following is the embedded tools registry extracted from `tool_and_resource_l
 | `domereg` | DOME Registry | https://registry.dome-ml.org |
 | `osaieco` | OSAI AI Ecosystem | https://osai.dome-ml.org/ai-ecosystem |
 | `software-management-wizard` | Software Management Wizard | https://smw.dsw.elixir-europe.org/ |
-| `autocodemeta` | Auto CodeMeta generator | https://autocodemeta.linkeddata.es/ |
+| `auto-codemeta` | Auto CodeMeta generator | https://autocodemeta.linkeddata.es/ |
 | `flowr` | flowR | https://github.com/flowr-analysis/flowr |
 | `pixi` | Pixi | https://pixi.prefix.dev/latest/ |
 | `nanobind` | nanobind | https://nanobind.readthedocs.io/en/latest/ |
@@ -317,19 +318,33 @@ The following is the embedded tools registry extracted from `tool_and_resource_l
 | `cargo` | cargo | https://doc.rust-lang.org/cargo/ |
 | `maqao` | maqao | https://maqao.org/ |
 | `malt` | malt | https://memtt.github.io/malt/doc/latest/ |
-| `renovate` | renovate | https://docs.renovatebot.com/ |
+| `renovatebot` | Renovatebot | https://docs.renovatebot.com/ |
 | `cran` | CRAN | https://cran.r-project.org/ |
 | `biotools` | bio.tools | https://bio.tools/ |
 | `fair-rs-evaluator` | FAIRsoft Evaluator | https://openebench.bsc.es/observatory/Evaluation |
 | `fair-rs-checklist` | FAIR software checklist | https://fairsoftwarechecklist.net |
 | `codecheck` | CODECHECK | https://codecheck.org.uk/ |
-| `pyright` | Pyright | https://github.com/microsoft/pyright |
+| `rsfc` | Research Software FAIRness Checks | https://rsfc.linkeddata.es |
+| `apache-license` | Apache-2.0 | https://spdx.org/licenses/Apache-2.0.html |
+| `cc-by-license` | CC-BY-SA-4.0 | https://spdx.org/licenses/CC-BY-SA-4.0.html |
+| `lgplv2` | LGPLv2 | https://spdx.org/licenses/LGPL-2.1-or-later.html |
+| `php` | PHP | https://www.php.net/ |
+| `openebench` | OpenEBench | https://openebench.bsc.es/ |
+| `openebench-vre` | OpenEBench VRE | https://openebench.bsc.es/vre/home/ |
+| `openebench-observatory` | OpenEBench Software Observatory | https://openebench.bsc.es/observatory/ |
+| `pytest-cov` | pytest-cov | https://pytest-cov.readthedocs.io/ |
+| `pip-tools` | pip-tools | https://pip-tools.readthedocs.io/en/latest/ |
 | `lintr` | lintr | https://lintr.r-lib.org/ |
+| `covr` | covr | https://covr.r-lib.org/ |
+| `zotero` | Zotero | https://www.zotero.org/ |
+| `cffconvert` | cffconvert | https://github.com/citation-file-format/cffconvert |
+| `apicuron` | APICURON | https://apicuron.org/ |
 | `clang-tidy` | clang-tidy | https://clang.llvm.org/extra/clang-tidy/ |
 | `cppcheck` | cppcheck | https://cppcheck.sourceforge.io/ |
 | `fortran-linter` | fortran-linter | https://github.com/cphyc/fortran-linter |
 | `flint` | flint | https://github.com/JonasToth/flint |
+| `pyright` | Pyright | https://github.com/microsoft/pyright |
 | `jet-jl` | JET.jl | https://aviatesk.github.io/JET.jl/stable/ |
 | `aqua-jl` | Aqua.jl | https://juliatesting.github.io/Aqua.jl/stable/ |
  
-*Note: this registry is embedded from `tool_and_resource_list.yml` at the time this skill was last updated. If the user provides an updated version of the file, use that in preference to this table. When the file is updated, this skill should be updated too.*
+*Note: this registry is embedded from `tool_and_resource_list.yml`. Last regenerated 2026-06-22 from the file provided by the user (189 entries). The final 7 rows (`clang-tidy`, `cppcheck`, `fortran-linter`, `flint`, `pyright`, `jet-jl`, `aqua-jl`) are static-analysis linters that are not yet in `tool_and_resource_list.yml`; they come from an unmerged pull request and are expected to land in the production file. Remove them here if that PR is rejected. If the user provides a newer version of the file, use that in preference to this table, and update this skill to match.*

@@ -27,6 +27,20 @@ Enrichment does **not**:
 - Follow links from pages that the fetched pages themselves link to (one level deep only).
 ---
  
+## One Sentence Per Line
+ 
+Enriched output follows the same source-formatting convention as the rest of RSQKit: one sentence per line.
+Each sentence ends with a newline, so a later edit touches one line instead of reflowing a paragraph, which keeps version-control diffs small and reviewable.
+ 
+This is a source-formatting convention only — it does not change how the page reads.
+A blank line still separates paragraphs; the single newlines between sentences within a paragraph are soft breaks, not paragraph breaks.
+Do not put a blank line between sentences of the same paragraph, and do not collapse a multi-sentence paragraph onto one line.
+ 
+When you rewrite or extend a section, apply this to the prose you add, and preserve it in prose you leave untouched — do not reflow existing one-sentence-per-line content back into wrapped paragraphs.
+List items stay one point per line; headings, code blocks, and tables are unaffected; YAML front matter is exempt (handled by the metadata skill).
+ 
+Note: this assumes the site renders a single newline as a space (Kramdown `hard_wrap: false`); Jekyll's default GFM processor hard-wraps single newlines, which is a site `_config.yml` setting, not something this skill controls.
+ 
 ## Enrichment Process
  
 ### Step 1 — Establish the baseline draft
@@ -71,6 +85,7 @@ Rewrite the draft sections where enrichment adds value. For each change:
 - Add links in the Solutions section (or Considerations where appropriate) using the format: `[Link text](URL)`.
 - Do not pad sections just because source material exists — only add what genuinely improves the page.
 - Maintain the RSQKit quality principles: the page must still be self-sufficient, accurate, and motivating.
+- Keep prose one sentence per line — both in added content and in existing content you touch; do not reflow paragraphs.
 ### Step 5 — Output
  
 Produce the enriched task page in full, using the standard RSQKit format. 
@@ -88,6 +103,7 @@ After integrating sources, verify the page still meets the RSQKit core principle
 - [ ] All added links point to high-quality, relevant, stable external material.
 - [ ] Content is factually accurate — sources have been interpreted correctly.
 - [ ] The Task → Description → Considerations → Solutions structure is intact.
+- [ ] Prose is one sentence per line; no existing one-sentence-per-line content was reflowed into wrapped paragraphs.
 - [ ] Added content doesn't contradict existing good content in the draft.
 ---
  
