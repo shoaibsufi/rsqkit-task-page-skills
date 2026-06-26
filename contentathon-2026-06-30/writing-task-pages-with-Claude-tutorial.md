@@ -47,6 +47,7 @@ You will submit your draft task page via a pull request. Fork [EVERSE-ResearchSo
 ## Four Claude.ai skills for RSQKit task page
 
 There are four skills in the RSQKit task page family, designed to be used in sequence: you write a draft task page, optionally enrich it with sources, tidy up tool links mentioned in the task page, then generate task page metadata.
+
 Some steps in the sequence are optional depending on your needs - details provided in the table below.
 
 
@@ -67,7 +68,6 @@ Some steps in the sequence are optional depending on your needs - details provid
 ```
 
 Steps 2 and 3 can be swapped. Step 4 can run any time after step 1. Always start a fresh Claude conversation for each new page — it keeps context small and output consistent.
-
 
 ## What each skill does
 
