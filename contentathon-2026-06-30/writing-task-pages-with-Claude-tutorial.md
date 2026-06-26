@@ -18,11 +18,6 @@ Drafts can either be created manually from scratch or with the help of an AI whi
 
 Objectives of this tutorial are learn how to use **Claude desktop app** and pre-prepared Claude AI `skills` (which embed a pre-defined set of rules, structure and style for task pages) to guide task page draft generation. 
 
-## Prerequsites
-
-- [Claude desktop app](https://claude.com/download)
-- An account with [Anthropic's Claude.ai](https://claude.ai/login)
-
 ## What are RSQKit task pages?
 
 Tasks are typical activities undertaken throughout research software lifecycle around engineering, development, sharing, publishing, deploying and maintenance of research software.
@@ -31,6 +26,20 @@ It typically does not offer an in depth instructions on how to perform the task 
 
 See existing pages at: https://everse.software/RSQKit/tasks.
 
+## Prerequsites
+
+### Account with Claude.ai
+An account with [Anthropic's Claude.ai](https://claude.ai/login) can be opened for free. With the free account, some usage limits apply (see the note above).
+
+### Claude desktop app
+Claude.ai skills require the Claude desktop app (Mac or Windows) - download it at [claude.ai/download](https://claude.ai/download) and sign in. 
+
+### Four task page skill files
+Download the four skill files from [github.com/shoaibsufi/rsqkit-task-page-skills](https://github.com/shoaibsufi/rsqkit-task-page-skills/tree/main/skills) and install each one via `Customise → Skills → Add skill` in Claude.ai desktop app. 
+
+### Fork the RSQKit repository
+You will submit your draft task page via a pull request. Fork [EVERSE-ResearchSoftware/RSQKit](https://github.com/EVERSE-ResearchSoftware/RSQKit) now so it is ready when you need it.
+
 
 ## What are Claude skills?
 
@@ -38,18 +47,7 @@ Skills are instruction files that tell Claude how to do a specific task — cons
 
 The four "task pages" skills in this tutorial work as a sequence: you write a draft task page, optionally enrich it with sources, tidy up tool links mentioned in the task page, then generate task page metadata.
 
-## Before you start — what to install
-
-**Claude desktop app**
-Skills require the Claude desktop app (Mac or Windows). Download it at [claude.ai/download](https://claude.ai/download) and sign in. A free account works, though usage limits apply (see the note above).
-
-**The four skill files**
-Download the skill files from [github.com/shoaibsufi/rsqkit-task-page-skills](https://github.com/shoaibsufi/rsqkit-task-page-skills/tree/main/skills) and install each one via Customise → Skills → Add skill. You need all four.
-
-**A fork of the RSQKit repository**
-You'll submit your finished page via a pull request. Fork [EVERSE-ResearchSoftware/RSQKit](https://github.com/EVERSE-ResearchSoftware/RSQKit) now so it's ready when you need it.
-
-## The four RSQKit skills
+## The four RSQKit task page skills
 
 There are four skills in the RSQKit task page family, designed to be used in sequence. Some steps are optional depending on your needs.
 
