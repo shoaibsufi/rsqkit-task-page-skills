@@ -26,6 +26,10 @@ It typically does not offer an in depth instructions on how to perform the task 
 
 See existing pages at: https://everse.software/RSQKit/tasks.
 
+## What are Claude skills?
+
+Skills are instruction files that tell Claude how to do a specific task — consistently, every time. You install them once into the Claude desktop app (under Custimise → Skills), and Claude automatically uses the right one when you describe what you want. 
+
 ## Prerequsites
 
 ### Account with Claude.ai
@@ -40,16 +44,11 @@ Download the four skill files from [github.com/shoaibsufi/rsqkit-task-page-skill
 ### Fork the RSQKit repository
 You will submit your draft task page via a pull request. Fork [EVERSE-ResearchSoftware/RSQKit](https://github.com/EVERSE-ResearchSoftware/RSQKit) now so it is ready when you need it.
 
+## Four Claude.ai skills for RSQKit task page
 
-## What are Claude skills?
+There are four skills in the RSQKit task page family, designed to be used in sequence: you write a draft task page, optionally enrich it with sources, tidy up tool links mentioned in the task page, then generate task page metadata.
+Some steps in the sequence are optional depending on your needs - details provided in the table below.
 
-Skills are instruction files that tell Claude how to do a specific task — consistently, every time. You install them once into the Claude desktop app (under Custimise → Skills), and Claude automatically uses the right one when you describe what you want. 
-
-The four "task pages" skills in this tutorial work as a sequence: you write a draft task page, optionally enrich it with sources, tidy up tool links mentioned in the task page, then generate task page metadata.
-
-## The four RSQKit task page skills
-
-There are four skills in the RSQKit task page family, designed to be used in sequence. Some steps are optional depending on your needs.
 
 | Step | Skill | What it does | Required? |
 |------|-------|-------------|-----------|
