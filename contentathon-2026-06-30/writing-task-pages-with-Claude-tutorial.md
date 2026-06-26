@@ -67,7 +67,9 @@ Some steps in the sequence are optional depending on your needs - details provid
 4. rsqkit-task-page-metadata     — generate the front matter
 ```
 
-Steps 2 and 3 can be swapped. Step 4 can run any time after step 1. Always start a fresh Claude conversation for each new page — it keeps context small and output consistent.
+Steps 2 and 3 can be swapped. Step 4 can run any time after step 1. 
+
+Always start a fresh Claude conversation for each new page — it keeps context small and output consistent.
 
 ## What each skill does
 
