@@ -21,6 +21,7 @@ Objectives of this tutorial are learn how to use **Claude desktop app** and pre-
 ## Prerequsites
 
 - [Claude desktop app](https://claude.com/download)
+- An account with [Anthropic's Claude.ai](https://claude.ai/login)
 
 ## What are RSQKit task pages?
 
