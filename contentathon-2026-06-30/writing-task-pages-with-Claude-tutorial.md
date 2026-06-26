@@ -11,8 +11,6 @@
 > Start by writing in a collaborative document such as [Google Docs](https://docs.google.com), following the [RSQKit page structure]() - see the [template](https://github.com/EVERSE-ResearchSoftware/RSQKit/blob/main/pages/tasks/TEMPLATE_task.md) and [example task pages](https://everse.software/RSQKit/tasks). 
 > When your draft is ready for review, fork the [RSQKit repository](https://github.com/EVERSE-ResearchSoftware/RSQKit), add your page file to `pages/tasks/`, and open a pull request against the `main` branch. The editorial board will review it from there.
 
-
-
 ## Objectives
 
 Overall aim of the contentathon is to create drafts of task pages for inclusion into RSQKit.
@@ -20,6 +18,9 @@ Drafts can either be created manually from scratch or with the help of an AI whi
 
 Objectives of this tutorial are learn how to use **Claude desktop app** and pre-prepared Claude AI `skills` (which embed a pre-defined set of rules, structure and style for task pages) to guide task page draft generation. 
 
+## Prerequsites
+
+- [Claude desktop app](https://claude.com/download)
 
 ## What are RSQKit task pages?
 
