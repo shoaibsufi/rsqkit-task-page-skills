@@ -115,7 +115,7 @@ Example prompts:
 
 ## Step-by-step install guide
 
-1. **Download the skill files.** Go to [github.com/shoaibsufi/rsqkit-task-page-skills](https://github.com/shoaibsufi/rsqkit-task-page-skills/tree/main/skills/task-page) and download the four `.skills` files that you will feed into Claude.ai desktop app. Skill files are binary files (basically .zip archives) which each contain is a single human-readable `SKILL.md` file. 
+1. **Download the skill files.** Go to [github.com/shoaibsufi/rsqkit-task-page-skills](https://github.com/shoaibsufi/rsqkit-task-page-skills/tree/main/skills/task-page) and download the four `.skills` files that you will feed into Claude.ai desktop app. Skill files are binary files (basically .zip archives) containing is a single human-readable Markdown file describing the skill. The `SKILL.md` files can also be found in the same folder and can be downloaded and fed in Claude.ai instead. 
 
 2. **Open the Claude desktop app.** Go to Customise → Skills. If you don't see this menu, make sure you're signed in. It may also look different depending on your app version.
 
